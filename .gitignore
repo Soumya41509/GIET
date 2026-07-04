@@ -62,3 +62,7 @@ lerna-debug.log*
 # Vercel
 .vercel/
 **/.vercel/
+
+# Unwanted root resources
+codebase-check.md
+ss-app/
