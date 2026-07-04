@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "a667e712-09c5-41b9-ab7c-6b1f0ae7119f"
+      }
+    },
+    "android": {
+      "package": "com.sranjan0510.gietadminpanel"
+    }
+  }
+}

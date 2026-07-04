@@ -1,0 +1,18 @@
+# EAS Build Ignore
+# Exclude large local build artifacts and dependencies to speed up upload
+
+node_modules/
+.expo/
+dist/
+web-build/
+
+# Ignore local native build folders which are huge (600MB+)
+android/app/build/
+android/build/
+android/.gradle/
+ios/build/
+ios/Pods/
+
+# Optional: Ignore the entire native folders if you are using prebuild
+# android/
+# ios/

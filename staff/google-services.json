@@ -1,0 +1,29 @@
+{
+    "project_info": {
+        "project_number": "619190591662",
+        "project_id": "gietgrievancestaff",
+        "storage_bucket": "gietgrievancestaff.firebasestorage.app"
+    },
+    "client": [
+        {
+            "client_info": {
+                "mobilesdk_app_id": "1:619190591662:android:022f5fcec2912dd3a3cd3f",
+                "android_client_info": {
+                    "package_name": "com.sranjan0510.gietgrievancestaff"
+                }
+            },
+            "oauth_client": [],
+            "api_key": [
+                {
+                    "current_key": "AIzaSyAhj6ctiTVfoXy6z3zkVkJyOH7DN5KFXes"
+                }
+            ],
+            "services": {
+                "appinvite_service": {
+                    "other_platform_oauth_client": []
+                }
+            }
+        }
+    ],
+    "configuration_version": "1"
+}

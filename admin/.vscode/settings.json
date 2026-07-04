@@ -1,0 +1,14 @@
+{
+  "css.customData": [],
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "css.validate": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.experimental.configFile": "admin/tailwind.config.js",
+  "tailwindCSS.includeLanguages": {
+    "css": "tailwindcss"
+  }
+}

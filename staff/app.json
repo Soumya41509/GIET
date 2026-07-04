@@ -1,0 +1,90 @@
+{
+  "expo": {
+    "name": "GIET STAFF",
+    "slug": "giet-grievance-staff",
+    "version": "2.0.4",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "gietgrievancestaff",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/giet-app-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+
+    "updates": {
+      "url": "https://u.expo.dev/cbc8161e-2bfc-4de7-a4e0-3ee9be463c20",
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    },
+    "runtimeVersion": "2.0.4",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/images/android_icon.png"
+      },
+
+      "predictiveBackGestureEnabled": false,
+      "package": "com.sranjan0510.gietgrievancestaff",
+      "versionCode": 3
+    },
+
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/giet_brand_v1.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "buildArchs": [
+              "arm64-v8a"
+            ],
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "proguardRules": "./proguard-rules.pro",
+            "newArchEnabled": true
+          },
+          "ios": {
+            "newArchEnabled": true
+          }
+        }
+      ],
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/giet-app-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#FFFFFF"
+        }
+      ],
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification_icon.png",
+          "color": "#8B5CF6"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "cbc8161e-2bfc-4de7-a4e0-3ee9be463c20"
+      }
+    }
+  }
+}

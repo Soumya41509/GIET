@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================================
+   DESIGN TOKENS — Typography & Glassmorphism 2.0
+   ======================================================== */
+:root {
+  /* Typography */
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Outfit', 'Inter', sans-serif;
+
+  /* Glassmorphism 2.0 */
+  --glass-blur: blur(25px);
+  --glass-blur-light: blur(12px);
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-strong: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-border-strong: rgba(255, 255, 255, 0.45);
+  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
+  --glass-shadow-hover: 0 20px 50px rgba(31, 38, 135, 0.15);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    @apply text-slate-900 antialiased;
+    background-color: #bef7ed;
+    overscroll-behavior-y: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Apply Outfit to all headings globally */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+
+  /* Explicit utility class for Outfit font — use on any element */
+  .font-display {
+    font-family: var(--font-display) !important;
+  }
+
+  .smooth-transition {
+    transition: all 0.2s ease-out;
+  }
+
+  /* ── Glassmorphism 2.0 ──────────────────────────────── */
+  .glass-panel {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    @apply shadow-sm transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.30);
+    box-shadow: var(--glass-shadow-hover);
+    @apply -translate-y-0.5;
+  }
+
+  .glass-input {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid var(--glass-border-strong);
+    backdrop-filter: var(--glass-blur-light);
+    -webkit-backdrop-filter: var(--glass-blur-light);
+    @apply focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500/20 outline-none transition-all duration-200;
+  }
+
+  .glass-button {
+    @apply bg-gradient-to-r from-cyan-600 to-teal-600 text-white shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-200 active:scale-[0.98];
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Hide ALL scrollbars globally — scroll still works ───────────── */
+/* Chrome, Safari, Edge */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* IE / old Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  display: block;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.2);
+  border-radius: 10px;
+  margin: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.3);
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.6);
+}
+
+/* For Firefox and general smooth scrolling */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(20, 184, 166, 0.3) transparent;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Global Smooth Entry */
+.section-fade-in {
+  animation: sectionFadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* App Loader Animations */
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-20%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-progress {
+  animation: progress 2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes appleLogoPulse {
+
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 0 0px rgba(20, 184, 166, 0));
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: brightness(1.05) drop-shadow(0 0 25px rgba(20, 184, 166, 0.2));
+  }
+}
+
+.animate-apple-loader {
+  animation: fadeInScale 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-text-reveal {
+  animation: textReveal 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-logo-pulse {
+  animation: appleLogoPulse 3s ease-in-out infinite;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+/* Skeleton Loader Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Remove Recharts focus outlines */
+.recharts-responsive-container:focus,
+.recharts-surface:focus,
+.recharts-wrapper:focus,
+.recharts-dot:focus,
+.recharts-sector:focus,
+.recharts-bar-rectangle:focus,
+path:focus,
+circle:focus,
+rect:focus,
+svg:focus,
+g:focus,
+tspan:focus,
+text:focus,
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.3);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heart-pulse {
+  display: inline-block;
+  animation: heartPulse 1.2s ease-in-out infinite;
+}
+
+/* Floating Animations for AppLoader Orbs */
+@keyframes floatSlow {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(15px, -25px) rotate(5deg); }
+  66% { transform: translate(-10px, 15px) rotate(-3deg); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-20px, 15px) rotate(-8deg); }
+  66% { transform: translate(25px, -10px) rotate(4deg); }
+}
+
+@keyframes floatFast {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(10px, -15px) rotate(10deg); }
+}
+
+.animate-float-slow {
+  animation: floatSlow 12s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 8s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatFast 6s ease-in-out infinite;
+}

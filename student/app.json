@@ -1,0 +1,82 @@
+{
+  "expo": {
+    "name": "GIET Grievance",
+    "slug": "giet-grievance-portal-2024",
+    "version": "2.1.2",
+    "scheme": "giet-grievance",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/giet-app-icon.png",
+    "splash": {
+      "image": "./assets/giet-app-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "in.gietgrievance.student",
+      "versionCode": 3,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/giet-app-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ],
+      "softwareKeyboardLayoutMode": "pan"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/a72a0c62-a7b0-41bd-a2c7-6a12b712edfd",
+      "enabled": true,
+      "checkAutomatically": "NEVER"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableProguardInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "enableMinifyInReleaseBuilds": true,
+            "proguardRules": "./proguard-rules.pro",
+            "buildArchs": [
+              "arm64-v8a",
+              "armeabi-v7a",
+              "x86_64"
+            ],
+            "newArchEnabled": true
+          },
+          "ios": {
+            "newArchEnabled": true
+          }
+        }
+      ],
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a72a0c62-a7b0-41bd-a2c7-6a12b712edfd"
+      }
+    },
+    "runtimeVersion": "2.1.2"
+  }
+}
